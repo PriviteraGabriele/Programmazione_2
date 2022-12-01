@@ -1,0 +1,4 @@
+int 6 ins:10 ins:5 ins:15 ins:13 ins:22 ins:7 7 15
+double 8 ins:10.7 ins:5.2 ins:15.9 ins:13.4 ins:22.7 ins:19.4 ins:21.7 ins:7.1 7.1 15.9
+char 10 ins:a ins:g ins:f ins:h ins:l ins:o ins:b ins:n ins:q ins:r a l
+bool 6 ins:0 ins:1 ins:0 ins:0 ins:0 ins:1 0 1
