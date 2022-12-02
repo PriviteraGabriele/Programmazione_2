@@ -312,6 +312,10 @@ class BST {
         //LIVELLO
             //Il livello di nodo in un BST corrisponde al numero di nodi presenti nel cammino che separano il nodo dalla radice, escludendo il nodo stesso. La radice si trova quindi al livello 0, i figli della radice a livello 1, e così via.
             int livello(T key){
+                if(this->isEmpty()){
+                    return nullptr;
+                }
+
                 BSTNode<T>* p = search(key);
 
                 //La key non è presente nel BST
@@ -344,10 +348,13 @@ class BST {
         //ALTEZZA
             //L'altezza di un BST corrisponde al numero di nodi presenti nel cammino che va dalla radice dell'albero alla foglia da essa più distante.
             int altezza(){
+                if(this->isEmpty()){
+                    return nullptr;
+                }
                 return altezza(root);
             }
             
-            int altezza(BSTNode<T>* p){
+            int altezza(BSTNode<T>* p){                
                 if (p == nullptr){
                     return 0;
                 } 
@@ -365,6 +372,10 @@ class BST {
 
         //DISTANZA SUCCESSORE [DA CONTROLLARE]
             int Dist_successor(T key){
+                if(this->isEmpty()){
+                    return nullptr;
+                }
+                
                 int counter = 0;
                 BSTNode<T> *p = search(key);
 
@@ -396,6 +407,10 @@ class BST {
 
         //DISTANZA ROOT
             int distanzaRoot(BSTNode<T>* nodo_h, BSTNode<T>* partenza){
+                if(this->isEmpty()){
+                    return nullptr;
+                }
+                
                 if(partenza->getKey() == nodo_h->getKey()){
                     return 0;
                 }
@@ -422,11 +437,15 @@ class BST {
 
         //DISTANZA TRA DUE NODI
             int distanzaChiavi(T k, T h){
+                if(this->isEmpty()){
+                    return nullptr;
+                }
+
                 BSTNode<T>* nodo_k = search(k);
                 BSTNode<T>* nodo_h = search(h);
                 int counter = 0;
                 if(!nodo_k || !nodo_h){
-                    throw out_of_range("Chiavi errate!");
+                    cout << "Chiavi Errate!" << endl;
                 }
                 if(k <= h){
                     BSTNode<T>* tmp = nodo_k;
