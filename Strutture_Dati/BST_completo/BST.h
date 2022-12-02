@@ -182,6 +182,11 @@ class BST {
             }
 
             void remove(T key){
+                if(this->isEmpty()){
+                    cout << "Non ci sono elementi nel BST!" << endl;
+                    return;
+                }
+
                 BSTNode<T>* p = search(key);
                 
                 if(p->getLeft() == nullptr){
